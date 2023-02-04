@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router'
 export default function Header() {
     // location hangi sayfada olduğumuzun path ini almamızı sağlıyor
     const location = useLocation();
-
+    // sayfalarası geçiş için
     const navigate = useNavigate();
     console.log(navigate);
 
@@ -22,9 +22,15 @@ export default function Header() {
             </div>
             <div>
                 <ul className='flex space-x-10'>
-                    <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMatchRoute("/") && "text-black border-b-red-500"}`} onClick={()=>navigate("/")}>Home</li>
-                    <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMatchRoute("/offers") && "text-black border-b-red-500"}`} onClick={()=>navigate("/offers")}>Offers</li>
-                    <li className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMatchRoute("/sign-in") && "text-black border-b-red-500"}`} onClick={()=>navigate("/sign-in")}>Sign in</li>
+                    <li 
+                    className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMatchRoute("/") && "text-black border-b-red-500"}`} 
+                    onClick={()=>navigate("/")}>Home</li>
+                    <li 
+                    className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMatchRoute("/offers") && "text-black border-b-red-500"}`} 
+                    onClick={()=>navigate("/offers")}>Offers</li>
+                    <li 
+                    className={`cursor-pointer py-3 text-sm font-semibold text-gray-400 border-b-[3px] border-b-transparent ${pathMatchRoute("/sign-in") && "text-black border-b-red-500"}`} 
+                    onClick={()=>navigate("/sign-in")}>Sign in</li>
                 </ul>
             </div>
         </header>
