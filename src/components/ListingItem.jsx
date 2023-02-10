@@ -6,7 +6,6 @@ import { FaTrash } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 
 export default function ListingItem({ listing, id, onEdit, onDelete }) {
-  console.log(listing);
   return (
     <li className="relative bg-white flex flex-col justify-between items-center shadow-md hover:shadow-xl rounded-md overflow-hidden transition-shadow duration-150 m-[10px]">
       <Link className="contents" to={`/category/${listing.type}/${id}`}>
@@ -38,7 +37,7 @@ export default function ListingItem({ listing, id, onEdit, onDelete }) {
               : listing.regularPrice
                   .toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-            {listing.type == "rent" && " / Month"}
+            {listing.type === "rent" && " / Month"}
           </p>
           <div className="flex items-center mt-[10px] space-x-3">
             <div className=" flex items-center space-x-1">
